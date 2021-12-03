@@ -1,0 +1,23 @@
+.userWrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.userItem {
+    list-style: none;
+    padding-top: 18px;
+    padding-left: 20px;
+}
+
+.userItem a {
+    text-decoration: none;
+    color: white;
+}
+
+.userAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding-top: 10px;
+}
+

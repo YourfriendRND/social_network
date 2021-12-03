@@ -1,0 +1,9 @@
+.dialogBlock {
+    background-color: teal;
+}
+
+.dialogsList {
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+}

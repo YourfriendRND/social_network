@@ -1,0 +1,13 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    grid-template-rows: 1fr 5fr;
+    color: white;
+}
+
+.headline {
+    grid-row-start: 1;
+    grid-row-end: 1; 
+    grid-column-start: 1;
+    grid-column-end: -1;
+}

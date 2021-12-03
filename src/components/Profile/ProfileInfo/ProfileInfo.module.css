@@ -1,0 +1,12 @@
+.wallpaper {
+    display: flex;
+    justify-content: center;
+}
+  
+.wallpaper__image {
+    width: 1000px;
+}
+
+.descriptionBlock {
+    padding-left: 10px;
+}

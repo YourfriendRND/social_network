@@ -1,0 +1,20 @@
+.messageItemWrapper {
+    display: flex;
+    width: max-content;
+    justify-content: flex-end;
+    padding: 5px 5px;
+    margin-top: 10px;
+    background-color: salmon;
+    border-radius: 10px;
+}
+
+.messageItem {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.userAvatarImg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
