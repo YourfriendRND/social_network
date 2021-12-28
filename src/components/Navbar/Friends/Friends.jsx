@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import RandomFriend from './RandomFriend/RandomFriend';
 
 const Friends = (props) => {
-    const { myFriendsData } = props;
+    const { sideBar } = props;
     const getRandomArray = function (array) {
         for (let i = array.length - 1; i > 0; i--) {
           let j = Math.floor(Math.random() * (i + 1));
@@ -15,7 +15,7 @@ const Friends = (props) => {
         return array;
       }
       
-      const randomFriends = getRandomArray(myFriendsData.friendsData).slice(0, 3).map(friend => <RandomFriend path={friend.avatarUrl} personName={`${friend.firstName} ${friend.lastName}`}></RandomFriend>)
+      const randomFriends = getRandomArray(sideBar.friendsData).slice(0, 3).map(friend => <RandomFriend path={friend.avatarUrl} personName={`${friend.firstName} ${friend.lastName}`}></RandomFriend>)
 
     const { myFriendsTitle, friendsWrapper, myFriends, allFriendsBtn, randomFriendsBlock } = style; 
     return <div className={friendsWrapper}>

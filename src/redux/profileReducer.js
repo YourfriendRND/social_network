@@ -9,19 +9,24 @@ const initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "addPost": 
+        case "addPost": {
             const newPostData = {
                 id: state.postsData.length + 1,
                 content: state.newPostText,
                 likesCount: 0,
             }
-            state.postsData.unshift(newPostData);
-            state.newPostText = "";
-            break;
-        case "updatePostText": 
-            state.newPostText = action.postText;
-            break;
-        default: console.error("unexpected action"); 
+            let stateCopy = {...state};
+            stateCopy.postsData = [...state.postsData]; 
+            stateCopy.postsData.unshift(newPostData);
+            stateCopy.newPostText = "";
+            return stateCopy; 
+        }
+        case "updatePostText": {
+            let stateCopy = {...state}; 
+            stateCopy.newPostText = action.postText;  
+            return stateCopy; 
+        }
+        default: console.log("unexpected action"); 
     }
     return state;
 }
