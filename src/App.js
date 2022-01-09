@@ -4,10 +4,8 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import { Route } from 'react-router-dom';
 import ContainerDialogs from './components/Dialogs/ContainerDialogs';
+import ContainerFriends from './components/Navbar/Friends/ContainerFriends';
 
-
-
-// Досмотреть видео 44
 const App = () => {
   return (
     <div className="app-wrapper">
@@ -15,10 +13,12 @@ const App = () => {
       <Route path="/dialogs" render={() => <Header pageName="Сообщения" />}></Route>
       <Route path="/news" render={() => <Header pageName="Новости" />}></Route>
       <Route path="/music" render={() => <Header pageName="Музыка" />}></Route>
+      <Route path="/friends" render={() => <Header pageName="Друзья" />}></Route>
       <Navbar />
       <main className="main-content">
         <Route path="/profile" render={() => <Profile />} />
         <Route path="/dialogs/" render={() => <ContainerDialogs />} />
+        <Route path="/friends" render={() => <ContainerFriends />}></Route>
       </main>
     </div>
   );

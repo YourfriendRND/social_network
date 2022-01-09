@@ -1,12 +1,21 @@
-import Friends from './Friends';
-import { connect } from 'react-redux';
+import Friends from "./Friends"; 
+import { connect } from "react-redux";
+import { followAC, setUsersAC, unFollowAC } from "../../../redux/friendsReducer";
 
 const mapStateToProps = (state) => {
     return {
-        sideBar: state.sideBar,
+        friends: state.friendsPage
     }
 }
 
-const ContainerFriends = connect(mapStateToProps)(Friends)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        follow: (userId) => (dispatch(followAC(userId))),
+        unFollow: (userId) => (dispatch(unFollowAC(userId))),
+        setUsers: (users) => (dispatch(setUsersAC(users))), 
+    }
+}
 
-export default ContainerFriends; 
+const ContainerFriends = connect()(Friends)
+
+export default ContainerFriends

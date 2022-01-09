@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from "./Navbar.module.css"; 
-import ContainerFriends from './Friends/ContainerFriends';
+import ContainerFriends from './FriendsPreview/ContainerFriendsPreview';
 
 const Navbar = () => {
     const {sidebar, item, itemLink, activeLink} = style;   

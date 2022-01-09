@@ -19,30 +19,26 @@ const initialState = {
     ],
 }
 
-const dialogReducer = (state = initialState, action) => {
-    
-    const stateCopy = {
-        ...state,
-        messagesDataSent: [...state.messagesDataSent]
-    }
-    
+const dialogReducer = (state = initialState, action) => {   
     switch (action.type) {
         case "addMessage": {
-            const newMessage = {
-                id: state.messagesDataSent.length - 1,
-                content: state.newMessageText,
-            }
-            stateCopy.messagesDataSent.push(newMessage);
-            stateCopy.newMessageText = "";
-            return stateCopy; 
+            return {
+                ...state,
+                newMessageText: "",
+                messagesDataSent: [...state.messagesDataSent, {
+                    id: state.messagesDataSent.length - 1,
+                    content: state.newMessageText,
+                }]
+            }; 
         }
         case "updateNewMessageText": {
-            stateCopy.newMessageText = action.messageText;
-            return stateCopy; 
-        }
-        default: console.log("unexpected action"); 
+            return {
+                ...state,
+                newMessageText: action.messageText,
+            } 
+        } 
+        default: return state;
     }
-    return state;
 }
 
 const addMessageActionCreator = () => {
