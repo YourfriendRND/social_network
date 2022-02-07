@@ -13,7 +13,7 @@ ReactDOM.render(
             <Provider store={store}>
                 <App />
             </Provider>
-            <Redirect to="/profile"></Redirect>
+            <Redirect to="/users"></Redirect>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

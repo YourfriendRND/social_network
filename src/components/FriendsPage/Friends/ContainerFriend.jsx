@@ -1,4 +1,4 @@
-import Friends from "./Friends"; 
+import Friend from "./Friend"; 
 import { connect } from "react-redux";
 import { followAC, setUsersAC, unFollowAC } from "../../../redux/friendsReducer";
 
@@ -16,6 +16,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const ContainerFriends = connect()(Friends)
+const ContainerFriends = connect(mapStateToProps, mapDispatchToProps)(Friend);
 
 export default ContainerFriends
