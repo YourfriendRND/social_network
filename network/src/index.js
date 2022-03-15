@@ -13,7 +13,7 @@ ReactDOM.render(
             <Provider store={store}>
                 <App />
             </Provider>
-            <Redirect to="/users"></Redirect>
+            {/* <Redirect to="/profile"></Redirect> */}
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
@@ -26,4 +26,9 @@ ReactDOM.render(
 reportWebVitals();
 
 
-// 49 видео 43 минута
+/** ДЗ
+    1. Сверстать страницу авторизации
+    2. Создать reducer для авторизации
+    3. Написать серверную часть авторизации с cookie (изучить тему)
+    4. Сохранить данные пользователя по ID и отрисовывать его данные на странице
+ */

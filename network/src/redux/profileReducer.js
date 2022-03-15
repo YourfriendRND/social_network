@@ -5,6 +5,7 @@ const initialState = {
       { id: 1, content: "Hi, how are you?", likesCount: 30 }
     ],
     newPostText: "Go...",
+    userProfile: null, 
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -27,6 +28,14 @@ const profileReducer = (state = initialState, action) => {
                 newPostText: action.postText,  
             };  
         }
+        case "SET_USER_PROFILE": {
+            return {
+                ...state, 
+                userProfile: {
+                    ...action.userProfile
+                }
+            }
+        }
         default: return state; 
     }
 }
@@ -44,8 +53,12 @@ const updatePostTextActionCreator = (text) => {
     }
 };
 
+const setUserProfile = (userProfile) => ({type: "SET_USER_PROFILE", userProfile: userProfile})
+
+
 export {
     profileReducer, 
     addPostActionCreator,
-    updatePostTextActionCreator
+    updatePostTextActionCreator,
+    setUserProfile
 }

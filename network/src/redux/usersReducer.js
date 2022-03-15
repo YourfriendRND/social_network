@@ -1,13 +1,38 @@
 const initialState = {
     users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1,
+    isFetching: false,
 }
 
-const followAC = (userId) => ({ type: "FOLLOW", id: userId }); 
-const unFollowAC = (userId) => ({ type: "UNFOLLOW", id: userId }); 
-const setUsersAC = (users) => ({type: "SET_USERS", users: users});
+const follow = (userId) => ({ type: "FOLLOW", id: userId }); 
+const unFollow = (userId) => ({ type: "UNFOLLOW", id: userId }); 
+const setUsers = (users) => ({type: "SET_USERS", users: users});
+const changeCurrentPage = (currentPage) => ({type: "CHANGE_USER_PAGE", currentPage: currentPage});
+const setTotalUserCount = (totalCount) => ({type: "SET_TOTAL_USER_COUNT", totalCount: totalCount});
+const setIsFetching = (fetching) => ({type: "TOGGLE_IS_FETCHING", isFetching: fetching})
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
+        case "TOGGLE_IS_FETCHING": {
+            return {
+                ...state,
+                isFetching: action.isFetching
+            }
+        }
+        case "SET_TOTAL_USER_COUNT": {
+            return {
+                ...state, 
+                totalUsersCount: action.totalCount
+            }
+        }
+        case "CHANGE_USER_PAGE": {
+            return {
+                ...state, 
+                currentPage: action.currentPage,
+            }
+        }
         case "FOLLOW": {
             return {
                 ...state,
@@ -33,7 +58,7 @@ const usersReducer = (state = initialState, action) => {
         case "SET_USERS": {
             return {
                 ...state,
-                users: [...state.users, ...action.users]
+                users: [...action.users]
             }
         }
         default: return state; 
@@ -42,7 +67,10 @@ const usersReducer = (state = initialState, action) => {
 
 export {
     usersReducer,
-    followAC,
-    unFollowAC,
-    setUsersAC
+    follow,
+    unFollow,
+    setUsers, 
+    changeCurrentPage,
+    setTotalUserCount,
+    setIsFetching
 }

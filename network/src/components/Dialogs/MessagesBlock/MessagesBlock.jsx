@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './MessagesBlock.module.css';
+import { messagesBlock, messagesList, sent, reply, userTextInputArea, textInput, submit } from './MessagesBlock.module.css';
 
 class MessagesBlock extends React.Component {
     constructor () {
@@ -8,19 +8,19 @@ class MessagesBlock extends React.Component {
     }
     render() {
         return (
-            <div className={style.messagesBlock}>
+            <div className={messagesBlock}>
                 Сообщения
-                <ul className={style.messagesList}>
-                    <div className={style.sent}>
+                <ul className={messagesList}>
+                    <div className={sent}>
                         {this.props.sentMessages}
                     </div>
-                    <div className={style.reply}>
+                    <div className={reply}>
                         {this.props.receivedMessages}
                     </div>
                 </ul>
-                <div className={style.userTextInputArea}>
-                    <textarea className={style.textInput} ref={this.newMessageElement} value={this.props.newMessageText} onChange={() => this.props.updateNewMessage(this.newMessageElement.current.value)} ></textarea>
-                    <button className={style.submit} onClick={() => {
+                <div className={userTextInputArea}>
+                    <textarea className={textInput} ref={this.newMessageElement} value={this.props.newMessageText} onChange={() => this.props.updateNewMessage(this.newMessageElement.current.value)} ></textarea>
+                    <button className={submit} onClick={() => {
                         this.props.addMessage()
                     }}>Отправить</button>
                 </div>
@@ -28,31 +28,5 @@ class MessagesBlock extends React.Component {
         )
     }
 }
-
-// const MessagesBlock = (props) => {
-//     const { sentMessages, receivedMessages, addMessage, updateNewMessage, newMessageText } = props;
-//     const { messagesBlock, messagesList, sent, reply, userTextInputArea, textInput, submit } = style;
-//     const newMessageElement = React.createRef()
-
-//     return (
-//         <div className={messagesBlock}>
-//             Сообщения
-//             <ul className={messagesList}>
-//                 <div className={sent}>
-//                     {sentMessages}
-//                 </div>
-//                 <div className={reply}>
-//                     {receivedMessages}
-//                 </div>
-//             </ul>
-//             <div className={userTextInputArea}>
-//                 <textarea className={textInput} ref={newMessageElement} value={newMessageText} onChange={() => updateNewMessage(newMessageElement.current.value)} ></textarea>
-//                 <button className={submit} onClick={() => {
-//                     addMessage()
-//                 }}>Отправить</button>
-//             </div>
-//         </div>
-//     )
-// }
 
 export default MessagesBlock;

@@ -3,7 +3,3 @@
   grid-template-rows: min-content 8fr min-content;
   grid-template-columns: 1fr 4fr;
 }
-
-.main-content {
-  background-color: brown;
-}

@@ -1,10 +1,125 @@
-.wallpaper {
+.profileInfo {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wallpaper {
+    margin-top: 30px;
 }
   
 .wallpaper__image {
-    width: 1000px;
+    width: 1200px;
+    height: 430px;
+}
+
+.profile__menu {
+    width: 1200px;
+    height: 110px;
+    background-color: #ffffff;
+    margin-top: -5px;
+}
+
+.profile__menuList {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-top: 42px;
+    font-weight: bold;
+}
+.profile__menuItem {
+    color: #9a9fbf;
+    text-decoration: none;
+}
+
+.profile__menuItem:hover {
+    color: #515365;
+    cursor: pointer;
+}
+
+.profile__menuList li:nth-child(3) {
+    margin-right: 240px;
+}
+
+.profile__menuItemActive {
+    color: #515365;
+    text-decoration: none;
+}
+
+.profile__controlPanel {
+    position: relative;
+}
+
+.profile__friendRequests {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: -140px;
+    left: 320px;
+    cursor: pointer;
+}
+
+.profile__dialogs {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: -140px;
+    left: 420px;
+    cursor: pointer;
+}
+
+.profile__settings {
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    top: -140px;
+    left: 520px;
+    cursor: pointer;
+}
+
+.profile__userPhotoWrapper {
+  position: relative;
+}
+
+.profile__userPhoto {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -250px;
+    border-radius: 60%;
+    left: 0px;
+}
+
+.profile__userContentWrapper {
+    position: relative;
+}
+
+.profile__userContent {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    top: -70px;
+    left: -40px;
+}
+
+.profile__userName {
+    color: #515365;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.profile__userName:hover {
+    color: #ff5e3a;
+    cursor: pointer;
+}
+
+.profile__userLocation {
+    color: #515365;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
 .descriptionBlock {
