@@ -1,0 +1,141 @@
+.regForm__names {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.regForm__firstName,
+.regForm__lastName {
+    width: 185px;
+    height: 55px;
+    position: relative;
+}
+
+.regForm__firstName input,
+.regForm__lastName input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+.regForm__firstName input[placeholder],
+.regForm__lastName input[placeholder] {
+    padding-left: 15px;
+}
+
+.regForm__personal {
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.regForm__password,
+.regForm__email {
+    position: relative;
+    margin-top: 25px;
+}
+
+.regForm__email input,
+.regForm__password input {
+    width: 90.8%;
+    height: 55px;
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+.regForm__email input[placeholder],
+.regForm__password input[placeholder] {
+    padding-left: 15px;
+}
+
+.regForm__email input:focus::placeholder, 
+.regForm__password input:focus::placeholder,
+.regForm__firstName input:focus::placeholder,
+.regForm__lastName input:focus::placeholder {
+    position: absolute;
+    top: 3px;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: .3s ease all;
+}
+
+.regForm__birthday input {
+    width: 92.5%;
+    height: 50px;
+    font-size: 16px;
+}
+
+.regForm__birthday {
+    position: relative;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.regForm__birthday label {
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.7;
+    left: 20px;
+    top: 5px;
+}
+
+.regForm__birthday input[value] {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.regForm__gender {
+    position: relative;
+    margin-top: 25px;
+}
+.regForm__gender  label {
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.7;
+    left: 20px;
+    top: 5px;
+}
+
+.regForm__gender select {
+    width: 96%;
+    height: 55px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.regForm__genderSelect option {
+    line-height: 50px;
+}
+
+.regForm__agreement {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.regForm__agreement label {
+    font-size: 14px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.regForm__agreement input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.regForm__confirmation {
+    margin-top: 30px;
+}
+
+.regForm__confirmation button {
+    width: 96%;
+    height: 55px;
+    background-color: #7c5ac2;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}

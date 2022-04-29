@@ -13,15 +13,24 @@
     border: 3px solid black;   
 }
 
-.forms {
-
-}
-
-.authForm__btn {
+.authForm__btn_registration {
     width: 45px;
     height: 355px;
     border: 2px solid red;
 }
+
+.authForm__btnIcon {
+    margin: 160px 10px;
+    cursor: pointer;
+}
+
+.authForm__btnPath {
+    fill:#030104;
+}
+
+.authForm__btnIcon:hover .authForm__btnPath {
+    fill:tomato;
+} 
 
 .registrationForm__btn {
     width: 45px;
@@ -49,6 +58,4 @@
     font-size: 18px;
 }
 
-.authForm__email {
-    
-}
+
